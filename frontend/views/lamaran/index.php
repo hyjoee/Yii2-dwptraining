@@ -39,7 +39,13 @@ $this->title = 'Lamaran';
                                 <?=$form->field($model, 'pendidikan')->dropDownList(['sma'=>'SMA/Sederajat','d3'=>'D3','s1'=>'S1','s2'=>'S2','s3'=>'S3'],['prompt'=>'Pilih'])->label('Pendidikan Terakhir')?>
 
                                 <?= $form->field($model, 'jurusan')->textInput(['maxlength' => true]) ?>
-                                
+                                <div class="panel panel-default" >
+                                    <div class="panel-body" >
+                                    <img src="contoh/contoh.jpg" width="151.181102px"/>
+                                      
+                                    </div>
+                                    <div> <i>Example foto 4 x 6</i> </div>
+                                </div>
                                 <?= $form->field($model, 'foto')->fileInput(['maxSize' => true]) ?>
                                 
                                 <?= $form->field($model, 'foto_close_up')->fileInput(['maxSize' => true]) ?>
