@@ -4,7 +4,6 @@ namespace backend\controllers;
 
 use Yii;
 use backend\models\Berita;
-use backend\models\BeritaSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\web\UploadedFile;

@@ -43,6 +43,7 @@ use yii\bootstrap\Nav;
                     ['label' => '<span class="fa fa-file-code-o" ></span> Berita', 'url' => ['/berita']],
                     ['label' => '<span class="fa fa-file-code-o" ></span> Kategori', 'url' => ['/kategori']],
                     ['label' => '<span class="fa fa-file-code-o" ></span> Komentar', 'url' => ['/komentar']],
+                    ['label' => '<span class="fa fa-file-code-o" ></span> Lamaran', 'url' => ['/lamaran']],
                     ['label' => '<span class="fa fa-file-code-o" ></span> User', 'url' => ['/user']],
                 ],
             ]

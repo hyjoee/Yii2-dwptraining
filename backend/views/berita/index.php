@@ -31,7 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <td><?=$model->judul?></td>
             <td><?=$model->jenis_berita_id?></td>
             <td><?php
-            $num_char = 50;
+            $num_char = 10;
                 $cut_text = substr($model->isi_berita, 0, $num_char);
                 if ($model->isi_berita{$num_char - 1} != ' ') {
                     $new_pos = strrpos($cut_text, ' ');

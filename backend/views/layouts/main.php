@@ -1,6 +1,7 @@
 <?php
 use yii\helpers\Html;
 
+
 /* @var $this \yii\web\View */
 /* @var $content string */
 if (Yii::$app->controller->action->id === 'login') {
@@ -42,7 +43,8 @@ if (Yii::$app->controller->action->id === 'login') {
         <?= $this->render(
             'content.php',
             ['content' => $content, 'directoryAsset' => $directoryAsset]
-        ) ?>
+        ) ;
+        require_once('alert.php'); ?>
 
     </div>
 
