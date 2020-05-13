@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 08, 2020 at 07:03 PM
+-- Generation Time: May 13, 2020 at 09:32 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -40,14 +40,6 @@ CREATE TABLE `berita` (
   `updated_by` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `berita`
---
-
-INSERT INTO `berita` (`id`, `judul`, `jenis_berita_id`, `isi_berita`, `file_lampiran`, `created_at`, `updated_at`, `created_by`, `updated_by`) VALUES
-(35, 'sdfsd', 3, 'Surabaya - Crazy rich Surabaya membagikan sembako dan uang di Surabaya bertujuan untuk membantu warga dan pekerja yang terdampak COVID-19. Selain itu, ia juga ingin merespons video viral di Bandung terkait YouTuber yang membuat konten prank bagi-bagi sembako isi sampah.\r\n\"Itu konten yang tidak mendidik. Seharusnya sebagai YouTuber kita harus membuat konten yang bermanfaat,\" kata salah satu pria di video, Tomli Wafa, kepada detikcom, Rabu (6/5/2020).\r\n\r\nWafa yang juga seorang YouTuber menilai membuat konten prank dengan mengecewakan orang lain apalagi saat musim pandemi COVID-19 sangat tidak mendidik.', 'ABSEN BARU.docx', 1588751506, 1588751506, NULL, NULL),
-(36, 'sdfsd2', 3, 'Wafa menjelaskan dirinya memang tidak membawa banyak bantuan sembako. Ia hanya membawa 6 kardus mi instan, 6 karung beras 5 kg, dan sejumlah uang yang dimasukkan di dalam kardus mi instan tersebut.\r\n\r\n\"Kami berikan kepada 6 orang. Masing-masing kami kasih beras, mi instan sama uangnya yang ada di dalam kardusnya. Murni bantuan dari saya pribadi,\" pungkas Wafa.', 'aula perpus.docx', 1588753029, 1588753029, NULL, NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -64,13 +56,6 @@ CREATE TABLE `kategori` (
   `updated_by` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `kategori`
---
-
-INSERT INTO `kategori` (`id`, `nama`, `keterangan`, `created_at`, `updated_at`, `created_by`, `updated_by`) VALUES
-(3, 'Horor', 'ada hantu', NULL, NULL, NULL, NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -86,21 +71,36 @@ CREATE TABLE `komentar` (
   `created_at` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `komentar`
+-- Table structure for table `lamaran`
 --
 
-INSERT INTO `komentar` (`id`, `berita_id`, `nama`, `email`, `isi_komentar`, `created_at`) VALUES
-(3, 35, 'johan', 'johan@gmail.com', 'asdasdasdasdasda', 1588751857),
-(5, 36, 'koko', 'koko@gmail.com', 'komentaarr aja lah', 1588753056),
-(6, 36, 'bidu', 'bidu@gmail.com', 'Mantul Keren bnget ni berita', 1588863773),
-(21, 36, '', '', 'Mantul Keren bnget ni beritadsa', 1588866026),
-(22, 35, '', '', 'padahhashdas', 1588866060),
-(23, 35, '', '', 'dasdasdsfdf', 1588866816),
-(24, 35, '', '', 'dasdasdsfdftgtg', 1588866822),
-(25, 35, '', '', 'dasdasdsfdftgtgyyyyy', 1588866849),
-(26, 35, '', '', 'ttttt', 1588866882),
-(27, 35, '', '', 'tttttsss', 1588938870);
+CREATE TABLE `lamaran` (
+  `id` int(11) NOT NULL,
+  `nama` varchar(50) NOT NULL,
+  `tempat_lahir` varchar(20) NOT NULL,
+  `tanggal_lahir` date NOT NULL,
+  `pendidikan` varchar(5) NOT NULL,
+  `jurusan` varchar(20) NOT NULL,
+  `foto` text NOT NULL,
+  `foto_close_up` text NOT NULL,
+  `ijazah` text NOT NULL,
+  `surat_lamaran` text NOT NULL,
+  `alasan` longtext NOT NULL,
+  `created_at` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `lamaran`
+--
+
+INSERT INTO `lamaran` (`id`, `nama`, `tempat_lahir`, `tanggal_lahir`, `pendidikan`, `jurusan`, `foto`, `foto_close_up`, `ijazah`, `surat_lamaran`, `alasan`, `created_at`) VALUES
+(5, 'johan222', 'padang', '2020-05-07', 's3', 'TK', 'w.jpg', 'Sosok-Bripda-Risda-Anak-Buruh-Bangunan-Lulusan-Terbaik-Polwan - Copy.jpg', 'Inheritance-Pewarisan.pdf', 'Inheritance-Pewarisan.pdf', 'ssssssss', 1589371483),
+(6, 'johan', 'padang', '2020-06-03', 's1', 'TI', 'w.jpg', 'Sosok-Bripda-Risda-Anak-Buruh-Bangunan-Lulusan-Terbaik-Polwan - Copy.jpg', 'Inheritance-Pewarisan.pdf', '07 - Working with Databases.pdf', 'ssss', 1589372721),
+(7, 'budi', 'padang', '2020-05-20', 'd3', 'TI', 'w.jpg', 'Sosok-Bripda-Risda-Anak-Buruh-Bangunan-Lulusan-Terbaik-Polwan - Copy.jpg', 'Inheritance-Pewarisan.pdf', '07 - Working with Databases.pdf', 'wwwww', 1589373049),
+(8, 'johan', 'padang', '2020-05-01', 's1', 'TI', 'w.jpg', 'Sosok-Bripda-Risda-Anak-Buruh-Bangunan-Lulusan-Terbaik-Polwan - Copy.jpg', 'Inheritance-Pewarisan.pdf', '07 - Working with Databases.pdf', 'ddddd', 1589373260);
 
 -- --------------------------------------------------------
 
@@ -161,6 +161,12 @@ ALTER TABLE `komentar`
   ADD KEY `berita_id` (`berita_id`);
 
 --
+-- Indexes for table `lamaran`
+--
+ALTER TABLE `lamaran`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -177,7 +183,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `berita`
 --
 ALTER TABLE `berita`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `kategori`
@@ -190,6 +196,12 @@ ALTER TABLE `kategori`
 --
 ALTER TABLE `komentar`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+
+--
+-- AUTO_INCREMENT for table `lamaran`
+--
+ALTER TABLE `lamaran`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `user`
