@@ -83,6 +83,7 @@ class LamaranController extends Controller
         if ($model->load(Yii::$app->request->post())) {
 
             try{
+                    
                     $foto = UploadedFile::getInstance($model,'foto');
                     $foto_close_up = UploadedFile::getInstance($model,'foto_close_up');
                     $ijazah = UploadedFile::getInstance($model,'ijazah');
@@ -134,11 +135,14 @@ class LamaranController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        
+        if ($model->load(Yii::$app->request->post())) {
+            // unlink('uploads_ijazah/'.$model->ijazah);
+            //  unlink('uploads_surat_lamaran/Inheritance-Pewarisan.pdf'.$model->surat_lamaran);
+            unlink(Yii::$app->basePath.'/web/uploads_surat_lamaran/'.$model->surat_lamaran);
+            $model->save();
             return $this->redirect(['view', 'id' => $model->id]);
         }
-
         return $this->render('update', [
             'model' => $model,
         ]);
@@ -154,7 +158,7 @@ class LamaranController extends Controller
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
-
+        // unlink('uploads_foto_close_up/'. $model->foto_close_up);
         return $this->redirect(['index']);
     }
 

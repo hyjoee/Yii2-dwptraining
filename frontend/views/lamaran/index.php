@@ -41,8 +41,7 @@ $this->title = 'Lamaran';
                                 <?= $form->field($model, 'jurusan')->textInput(['maxlength' => true]) ?>
                                 <div class="panel panel-default" >
                                     <div class="panel-body" >
-                                    <img src="contoh/contoh.jpg" width="151.181102px"/>
-                                      
+                                    <img src="contoh/contoh.jpg" width="151.181101px"/>
                                     </div>
                                     <div> <i>Example foto 4 x 6</i> </div>
                                 </div>

@@ -27,7 +27,7 @@ $this->title = 'My Yii Application';
             'yAxis' => [
                 'title' => ['text' => 'Jumlah ']
             ],
-            'series' => $b
+            'series' => "a"
             ]
         ]); 
     ?>  
